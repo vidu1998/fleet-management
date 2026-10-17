@@ -32,7 +32,10 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function isSuperAdmin(): bool
+    {
+        return (bool) $this->is_super_admin;
+    }
     /**
      * Get the attributes that should be cast.
      *
